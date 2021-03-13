@@ -60,4 +60,6 @@ const seed = async () => {
   }
 };
 
-seed();
+seed().then(() => {
+  process.exit();
+});
