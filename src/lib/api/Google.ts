@@ -2,8 +2,6 @@ import { google } from "googleapis";
 
 const { G_CLIENT_ID, G_CLIENT_SECRET, PUBLIC_URL } = process.env;
 
-console.log({ PUBLIC_URL });
-
 const auth = new google.auth.OAuth2(
   G_CLIENT_ID,
   G_CLIENT_SECRET,
@@ -18,6 +16,7 @@ export const Google = {
       "https://www.googleapis.com/auth/userinfo.profile",
     ],
   }),
+
   logIn: async (code: string) => {
     const { tokens } = await auth.getToken(code);
 
